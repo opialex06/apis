@@ -31,8 +31,10 @@ public class ExpensesController : ControllerBase
         
         return CreatedAtAction (nameof(RegisterExpense), new { id = newExpense.Id }, newExpense);
     }
+
+    
     [HttpGet]
-    public ActionResult<IEnumerable<Expense>> GetAllExpenses()
+    public IActionResult GetAllExpenses()
     {
         return Ok(_expenses);
     }
